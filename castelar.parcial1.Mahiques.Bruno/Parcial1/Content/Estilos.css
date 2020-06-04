@@ -3,16 +3,17 @@ html, body {
     height: 100%;
 }
 
-h1, h2, h3, p {
+h1, p {
     margin: 0;
-    padding: 0;
+    padding: 5px;
+    margin-bottom:5px;
 }
 
 header {
     display: block;
     background-color: #286af0;
     padding: 5px 0px;
-    margin-bottom: 5px;
+  
 }
 
 p {
@@ -23,8 +24,13 @@ p {
 .Imagen {
     width: 300px;
     height: 300px;
-    margin-left: 500px;
-  
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#pie {
+    text-align: center;
 }
 
 section {
@@ -36,10 +42,11 @@ section {
     min-height: 450px;
 }
 
-Izquierda {
-    position: center;
-    text-align: center;
-    background-color: #6793ec;
+aside {
+    margin-top: 5px;
+    float: left;
+    border: red 2px solid;
+    width: 300px;
 }
 
 footer {
@@ -47,7 +54,7 @@ footer {
     text-align: center;
     clear: both;
     color: white;
-    background-color: #6793ec;
+    background-color: #0c6ed9;
     padding: 5px;
     text-decoration: underline;
 }
