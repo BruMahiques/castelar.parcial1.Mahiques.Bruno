@@ -13,5 +13,9 @@ namespace Parcial1.Controllers
         {
             return View();
         }
+        public ActionResult Cosmo()
+        {
+            return View();
+        }
     }
 }

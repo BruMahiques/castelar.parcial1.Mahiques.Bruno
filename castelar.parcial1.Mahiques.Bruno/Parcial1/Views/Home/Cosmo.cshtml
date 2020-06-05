@@ -1,0 +1,88 @@
+﻿<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cosmo</title>
+</head>
+<body>
+    <h1>Alta de Constelaciones</h1>
+
+    <div>
+        <table>
+            <tr>
+                <th>
+                    Siglo:
+                </th>
+                <td>
+                    <input id="txtSiglo" type="text" placeholder="Ingrese Siglo de la constelacion" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Nombre:
+                </th>
+                <td> <input id="txtNombre" type="text" placeholder="Ingrese Nombre de la constelacion" /> </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="button" value="Guardar Constelacion" onclick="Apretar();" id="btnGuardar"  />
+                    <input type="button" value="Listar Constelaciones" onclick="Listar();" id="btnListar"  />
+                </td>
+            </tr>
+        </table>
+
+        <p>
+            <h3>Listado de Constelaciones</h3>
+        </p>
+        <div id="divLista">No hay nada por ahora</div>
+    </div>
+       
+        <script>
+
+            var ListaDeConstelaciones = new Array();
+            
+            function Constelacion() {
+
+                this.setSiglo = function (value) { this._siglo = value; }
+                this.getSiglo = function () { return this._siglo };
+
+                this.setNombre = function (value) { this._nombre = value; }
+                this.getNombre = function () { return this._nombre };
+            }
+
+            function Apretar() {
+                var Const = new Constelacion();
+                var txtSiglo = document.getElementById("txtSiglo").value;
+                var txtNombre = document.getElementById("txtNombre").value;
+                if (txtSiglo == "" || txtNombre == "") {
+                    alert("Debe ingresar datos, le falta el siglo o el nombre.");
+                    return;
+                }
+                Const.setSiglo(txtSiglo);
+                Const.setNombre(txtNombre);
+                ListaDeConstelaciones.push(Const);
+
+                document.getElementById("txtSiglo").value = "";
+                document.getElementById("txtNombre").value = "";
+
+            }
+
+            function Listar() {
+                var divLista = document.getElementById("Lista");
+                divLista.innerHTML = "";
+                if (ListaDeConstelaciones.length == 0) {
+                    ListaDeConstelaciones.innerHTML = "No hay nada cargado por ahora";
+                    return;
+                }
+                for (let i = 0; i < ListaDeConstelaciones.length; i++) {
+                    let c = ListaDeConstelaciones[i];
+                    divLista.innerHTML += "Siglo: " + Const.getSiglo() + " - Nombre: " + Const.getNombre + "<br />";
+                }
+            });
+
+
+        </script>
+        
+    </body>
+</html>
+
