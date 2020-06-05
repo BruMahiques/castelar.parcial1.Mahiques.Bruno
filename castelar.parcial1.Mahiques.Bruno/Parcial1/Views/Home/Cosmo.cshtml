@@ -25,14 +25,14 @@
             <tr>
                 <th></th>
                 <td>
-                    <input type="button" value="Guardar Constelacion" onclick="Apretar();" id="btnGuardar"  />
-                    <input type="button" value="Listar Constelaciones" onclick="Listar();" id="btnListar"  />
+                    <button type="button" id="btnGuardar" class="btn button-success color-success" onclick="Apretar();">Guardar Constelacion</button>
+                    <button type="button" id="btnListar" class="btn button-default color-default" onclick="Listar();">Listar Constelaciones</button>
                 </td>
             </tr>
         </table>
 
         <p>
-            <h3>Listado de Constelaciones</h3>
+            <h2>Listado de Constelaciones</h2>
         </p>
         <div id="divLista">No hay nada por ahora</div>
     </div>
@@ -41,14 +41,18 @@
 
             var ListaDeConstelaciones = new Array();
             
-            function Constelacion() {
+            Constelacion() 
+            {
 
                 this.setSiglo = function (value) { this._siglo = value; }
-                this.getSiglo = function () { return this._siglo };
+                this.getSiglo = function () { return this._siglo; }
 
                 this.setNombre = function (value) { this._nombre = value; }
-                this.getNombre = function () { return this._nombre };
+                this.getNombre = function () { return this._nombre; }
             }
+            
+        
+        
 
             function Apretar() {
                 var Const = new Constelacion();
@@ -78,7 +82,7 @@
                     let c = ListaDeConstelaciones[i];
                     divLista.innerHTML += "Siglo: " + Const.getSiglo() + " - Nombre: " + Const.getNombre + "<br />";
                 }
-            });
+            }
 
 
         </script>
